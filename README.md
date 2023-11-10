@@ -1,17 +1,33 @@
 # ChatGPT - OPEN AI API
 
-1. after clone, run
+1. After clone, run
 
-   ```bash
-   cd frontend-angular-chatgpt-app
-   pnpm i
-   ```
+    ```bash
+    cd frontend-angular-chatgpt-app
+    pnpm i
+    ```
 
-2. Then, set environments and run
+2. Then, generate environments
 
-   ```bash
-   ng serve -o
-   ```
+    ```bash
+    ng g environments
+    ```
+
+3. Set this properties to environment file
+
+    ```bash
+    export const environment = {
+        OPENAI_API_KEY: 'your_api_key',
+        BASE_API_URL: 'https://api.openai.com/v1/chat/completions',
+    };
+
+    ```
+
+4. Run dev server
+
+    ```bash
+    ng serve -o
+    ```
 
 ## Dependencies
 
