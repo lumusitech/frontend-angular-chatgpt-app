@@ -1,11 +1,17 @@
-# ChatGPT
+# ChatGPT - OPEN AI API
 
-after clone, run
+1. after clone, run
 
-```bash
-pnpm i
-ng serve -o
-```
+   ```bash
+   cd frontend-angular-chatgpt-app
+   pnpm i
+   ```
+
+2. Then, set environments and run
+
+   ```bash
+   ng serve -o
+   ```
 
 ## Dependencies
 
