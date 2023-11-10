@@ -1,1 +1,10 @@
-<p>form works!</p>
+<h1>Form</h1>
+<hr />
+<p>
+  <strong>Response: </strong>
+  @if(apiResponse){
+  {{ apiResponse }}
+  } @else{
+  {{ apiResponseError }}
+  }
+</p>
