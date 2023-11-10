@@ -33,23 +33,21 @@ export class ApiService {
       temperature: 0.7,
     };
 
-    return this.http
-      .post<APIResponse>(environment.BASE_API_URL, body, options)
-      .pipe(
-        map<APIResponse, Message>(
-          (response: APIResponse) => response.choices[0].message
-        ),
+    return this.http.post<APIResponse>(environment.BASE_API_URL, body).pipe(
+      map<APIResponse, Message>(
+        (response: APIResponse) => response.choices[0].message
+      ),
 
-        tap((value) => console.log({ value })),
+      tap((value) => console.log({ value })),
 
-        catchError((error) => {
-          console.warn({ ERROR: error });
+      catchError((error) => {
+        console.warn({ ERROR: error });
 
-          return of({
-            role: 'system',
-            content: error.error.error.message,
-          });
-        })
-      );
+        return of({
+          role: 'system',
+          content: error.error.error.message,
+        });
+      })
+    );
   }
 }
